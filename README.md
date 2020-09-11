@@ -1,5 +1,3 @@
-# Food_Health-log
-its an exercise to keep log of food and health information and retrieve 
 # Exercise given by Harry from Code with Harry Youtube Channel (HarisAK)
 # Coder - Praveen Singh Chauhan (Technology Video Network - Youtube Channel ,
 # GAMP Aaryawarti Films - Film Production & Youtube Channel)
@@ -30,8 +28,9 @@ def getdate():  # define a function for date
 
 while True:  # run the program untill user exit
 
-    print("=" * 55)
-    log_ret_qs1 = input(" What do you want to do [ 1 = Log | 2 = Retrieve | 3 = Exit ]  > ")
+    print("=" * 80)
+    log_ret_qs1 = input(" What do you want to do [ 1 = Log | 2 = Retrieve | 3 = Exit or Enter 'exit' ]  > ")
+
 # conditions start from here
     if log_ret_qs1.lower() == "exit":
         print("*" * 160)
@@ -50,7 +49,7 @@ while True:  # run the program untill user exit
             continue
 
     log_ret_qs = int(log_ret_qs1)
-    print("=" * 55)
+    print("=" * 80)
 
     if log_ret_qs == 1:
         print(f"You chose [ log ] ")
@@ -87,18 +86,18 @@ while True:  # run the program untill user exit
 
             if food_health_mem == 1:
                 print(f"You chose [ Food Log of Rohan ] ")
-                food_item = input("Enter food item he had > ")
+                food_item = input("Enter food item he ate > ")
                 with open("food_rohan.txt", "a") as foodrohan:
                     pointer_position = foodrohan.tell()
                     foodrohan.seek(pointer_position)
-                    foodrohan.write(f"{getdate()},{food_item} \n")
+                    foodrohan.write(f"[ {getdate()} ]  {food_item} \n")
             elif food_health_mem == 2:
                 print(f"You chose [ Health Log  of Rohan  ] ")
                 health_item = input("Enter how many Exercise 'Rohan' did > ")
                 with open("health_rohan.txt", "a") as healthrohan:
                     pointer_position = healthrohan.tell()
                     healthrohan.seek(pointer_position)
-                    healthrohan.write(f"{getdate()},{health_item} \n")
+                    healthrohan.write(f"[ {getdate()} ]  {health_item} \n")
 
         elif log_mem_qs == 2:
             print(f"You chose [ Praveen ] ")
@@ -107,18 +106,18 @@ while True:  # run the program untill user exit
 
             if food_health_mem == 1:
                 print(f"You chose [ Food Log of Praveen ] ")
-                food_item = input("Enter food item 'Praveen' had > ")
+                food_item = input("Enter food item 'Praveen'  ate > ")
                 with open("food_praveen.txt", "a") as foodpraveen:
                     pointer_position = foodpraveen.tell()
                     foodpraveen.seek(pointer_position)
-                    foodpraveen.write(f"{getdate()},{food_item} \n")
+                    foodpraveen.write(f"[ {getdate()} ]  {food_item} \n")
             elif food_health_mem == 2:
                 print(f"You chose [ Health Log of Praveen ] ")
                 health_item = input("Enter how many Exercise 'Praveen' did > ")
                 with open("health_praveen.txt", "a") as healthpraveen:
                     pointer_position = healthpraveen.tell()
                     healthpraveen.seek(pointer_position)
-                    healthpraveen.write(f"{getdate()},{health_item} \n")
+                    healthpraveen.write(f"[ {getdate()} ]   {health_item} \n")
             else:
                 print(" No More Options ")
 
@@ -129,18 +128,18 @@ while True:  # run the program untill user exit
 
             if food_health_mem == 1:
                 print(f"You chose [ Food Log of Harry ] ")
-                food_item = input("Enter food item 'Harry' had > ")
+                food_item = input("Enter food item 'Harry' ate > ")
                 with open("food_harry.txt", "a") as foodharry:
                     pointer_position = foodharry.tell()
                     foodharry.seek(pointer_position)
-                    foodharry.write(f"{getdate()},{food_item} \n")
+                    foodharry.write(f"[ {getdate()} ]  {food_item} \n")
             elif food_health_mem == 2:
                 print(f"You chose [ Health Log of Harry ] ")
                 health_item = input("Enter how many Exercise 'Harry' did > ")
                 with open("health_harry.txt", "a") as healthharry:
                     pointer_position = healthharry.tell()
                     healthharry.seek(pointer_position)
-                    healthharry.write(f"{getdate()}, {health_item} \n")
+                    healthharry.write(f" [ {getdate()} ]  {health_item} \n")
             else:
                 print(" No More Options ")
 
@@ -150,84 +149,90 @@ while True:  # run the program untill user exit
     elif log_ret_qs == 2:
         print(f"You chose [ Retrieve ] ")
         log_mem_qs = int(input("Which member's Retrieve [ 1 = Rohan | 2 = Praveen | 3 = Harry  > "))
-        print("-" * 55)
+        print("-" * 80)
 
         if log_mem_qs == 1:
             print(f"You chose [ Rohan ] ")
             food_health_mem = int(input(" Choose log type [ 1 = Food log | 2 = Health Log ]  > "))
-            print("=" * 55)
+            print("=" * 80)
 
             if food_health_mem == 1:
                 with open("food_rohan.txt", "r") as foodrohan:
-                    print("-" * 50)
+                    print("-" * 80)
                     print("              Food Log of Rohan ")
-                    print("-" * 50)
+                    print("S.No. Date & Time                    Food Item  ")
+                    print("-" * 80)
                     count = 1
                     for line in foodrohan:
-                        print(count, line, end="")
+                        print(f"[ {count} ]", line, end="")
                         count += 1
-                print("-" * 50)
+                print("-" * 80)
             elif food_health_mem == 2:
                 with open("health_rohan.txt", "r") as healthrohan:
-                    print("-" * 50)
+                    print("-" * 80)
                     print("              Health Log of Rohan ")
-                    print("-" * 50)
+                    print("S.No. Date & Time                    Exercises   ")
+                    print("-" * 80)
                     count = 1
                     for line in healthrohan:
-                        print(count, line, end="")
+                        print(f"[ {count} ]", line, end="")
                         count += 1
-                print("-" * 50)
+                print("-" * 80)
 
         elif log_mem_qs == 2:
             print(f"You chose [ Praveen ] ")
             food_health_mem = int(input(" Choose log type [ 1 = Food log | 2 = Health Log ]  > "))
-            print("=" * 55)
+            print("=" * 80)
 
             if food_health_mem == 1:
                 with open("food_praveen.txt", "r") as foodpraveen:
-                    print("-" * 50)
+                    print("-" * 80)
                     print("              Food Log of Praveen ")
-                    print("-" * 50)
+                    print("S.No. Date & Time                    Food Item  ")
+                    print("-" * 80)
                     count = 1
                     for line in foodpraveen:
-                        print(count, line, end="")
+                        print(f"[ {count} ]", line, end="")
                         count += 1
-                print("-" * 50)
+                print("-" * 80)
             elif food_health_mem == 2:
                 with open("health_praveen.txt", "r") as healthpraveen:
-                    print("-" * 50)
+                    print("-" * 80)
                     print("              Health log of Praveen  ")
-                    print("-" * 50)
+                    print("S.No. Date & Time                    Exercises   ")
+                    print("-" * 80)
                     count = 1
                     for line in healthpraveen:
-                        print(count, line, end="")
+                        print(f"[ {count} ]", line, end="")
                         count += 1
 
         elif log_mem_qs == 3:
             print(f"You chose [ Harry ] ")
             food_health_mem = int(input(" Choose log type [ 1 = Food log | 2 = Health Log ]  > "))
-            print("=" * 55)
+            print("=" * 80)
 
             if food_health_mem == 1:
                 with open("food_harry.txt", "r") as foodharry:
-                    print("-" * 50)
+                    print("-" * 80)
                     print("              Food Log of Harry  ")
-                    print("-" * 50)
+                    print("S.No. Date & Time                    Food Item  ")
+                    print("-" * 80)
                     count = 1
                     for line in foodharry:
-                        print(count, line, end="")
+                        print(f"[ {count} ]", line, end="")
                         count += 1
-                print("-" * 50)
+                print("-" * 80)
             elif food_health_mem == 2:
                 with open("health_harry.txt", "r") as healthharry:
-                    print("-" * 50)
+                    print("-" * 80)
                     print("              Heath Log of Harry  ")
-                    print("-" * 50)
+                    print("S.No. Date & Time                    Exercises   ")
+                    print("-" * 80)
                     count = 1
                     for line in healthharry:
-                        print(count, line, end="")
+                        print(f"[ {count} ]", line, end="")
                         count += 1
-                print("-" * 50)
+                print("-" * 80)
 
     elif log_ret_qs == 3:
         print("*" * 160)
