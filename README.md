@@ -157,7 +157,7 @@ while True:  # run the program untill user exit
             print("=" * 80)
 
             if food_health_mem == 1:
-                with open("food_rohan.txt", "r") as foodrohan:
+                with open("food_rohan.txt") as foodrohan:
                     print("-" * 80)
                     print("              Food Log of Rohan ")
                     print("S.No. Date & Time                    Food Item  ")
@@ -168,7 +168,7 @@ while True:  # run the program untill user exit
                         count += 1
                 print("-" * 80)
             elif food_health_mem == 2:
-                with open("health_rohan.txt", "r") as healthrohan:
+                with open("health_rohan.txt") as healthrohan:
                     print("-" * 80)
                     print("              Health Log of Rohan ")
                     print("S.No. Date & Time                    Exercises   ")
@@ -185,7 +185,7 @@ while True:  # run the program untill user exit
             print("=" * 80)
 
             if food_health_mem == 1:
-                with open("food_praveen.txt", "r") as foodpraveen:
+                with open("food_praveen.txt") as foodpraveen:
                     print("-" * 80)
                     print("              Food Log of Praveen ")
                     print("S.No. Date & Time                    Food Item  ")
@@ -196,7 +196,7 @@ while True:  # run the program untill user exit
                         count += 1
                 print("-" * 80)
             elif food_health_mem == 2:
-                with open("health_praveen.txt", "r") as healthpraveen:
+                with open("health_praveen.txt") as healthpraveen:
                     print("-" * 80)
                     print("              Health log of Praveen  ")
                     print("S.No. Date & Time                    Exercises   ")
@@ -212,7 +212,7 @@ while True:  # run the program untill user exit
             print("=" * 80)
 
             if food_health_mem == 1:
-                with open("food_harry.txt", "r") as foodharry:
+                with open("food_harry.txt") as foodharry:
                     print("-" * 80)
                     print("              Food Log of Harry  ")
                     print("S.No. Date & Time                    Food Item  ")
@@ -223,7 +223,7 @@ while True:  # run the program untill user exit
                         count += 1
                 print("-" * 80)
             elif food_health_mem == 2:
-                with open("health_harry.txt", "r") as healthharry:
+                with open("health_harry.txt") as healthharry:
                     print("-" * 80)
                     print("              Heath Log of Harry  ")
                     print("S.No. Date & Time                    Exercises   ")
