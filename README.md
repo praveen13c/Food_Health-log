@@ -91,6 +91,7 @@ while True:  # run the program untill user exit
                     pointer_position = foodrohan.tell()
                     foodrohan.seek(pointer_position)
                     foodrohan.write(f"[ {getdate()} ]  {food_item} \n")
+                    print("Food Item added successfully ")
             elif food_health_mem == 2:
                 print(f"You chose [ Health Log  of Rohan  ] ")
                 health_item = input("Enter how many Exercise 'Rohan' did > ")
@@ -98,7 +99,7 @@ while True:  # run the program untill user exit
                     pointer_position = healthrohan.tell()
                     healthrohan.seek(pointer_position)
                     healthrohan.write(f"[ {getdate()} ]  {health_item} \n")
-
+                    print("Health Item added successfully ")
         elif log_mem_qs == 2:
             print(f"You chose [ Praveen ] ")
             food_health_mem = int(input(" Choose log type [ 1 = Food log | 2 = Health Log ]  > "))
@@ -111,6 +112,7 @@ while True:  # run the program untill user exit
                     pointer_position = foodpraveen.tell()
                     foodpraveen.seek(pointer_position)
                     foodpraveen.write(f"[ {getdate()} ]  {food_item} \n")
+                    print("Food Item added successfully ")
             elif food_health_mem == 2:
                 print(f"You chose [ Health Log of Praveen ] ")
                 health_item = input("Enter how many Exercise 'Praveen' did > ")
@@ -118,6 +120,7 @@ while True:  # run the program untill user exit
                     pointer_position = healthpraveen.tell()
                     healthpraveen.seek(pointer_position)
                     healthpraveen.write(f"[ {getdate()} ]   {health_item} \n")
+                    print("Health Item added successfully ")
             else:
                 print(" No More Options ")
 
@@ -133,6 +136,7 @@ while True:  # run the program untill user exit
                     pointer_position = foodharry.tell()
                     foodharry.seek(pointer_position)
                     foodharry.write(f"[ {getdate()} ]  {food_item} \n")
+                    print("Food Item added successfully ")
             elif food_health_mem == 2:
                 print(f"You chose [ Health Log of Harry ] ")
                 health_item = input("Enter how many Exercise 'Harry' did > ")
@@ -140,6 +144,7 @@ while True:  # run the program untill user exit
                     pointer_position = healthharry.tell()
                     healthharry.seek(pointer_position)
                     healthharry.write(f" [ {getdate()} ]  {health_item} \n")
+                    print("Health Item added successfully ")
             else:
                 print(" No More Options ")
 
